@@ -1,0 +1,28 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+       {
+    "type": "shell",
+    "label": "C++: Build Debug and Run (g++)",
+    "command": "g++ -c src/*.cpp -std=c++14 -g -Wall -m64 -I include && g++ *.o -o bin/debug/main -L -lSDL2main -lSDL2 -lSDL2_image && ./bin/debug/main && rm *.o",
+    "problemMatcher": [
+        "$gcc"
+    ],
+    "group": {
+        "kind": "build",
+        "isDefault": true
+    }
+},
+{
+    "type": "shell",
+    "label": "C++: Build Release (g++)",
+    "command": "g++ -c src/*.cpp -std=c++14 -O3 -Wall -m64 -I include && g++ *.o -o bin/release/main -s -L -lSDL2main -lSDL2 -lSDL2_image &&  ./bin/release/main && rm*.o",
+    "problemMatcher": [
+        "$gcc"
+    ],
+    "group": "build",
+}
+    ]
+}
