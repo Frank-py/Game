@@ -1,5 +1,7 @@
+
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+
 #include <iostream>
 #include <vector>
 
@@ -28,7 +30,7 @@ int main(int argc, char* args[])
 	std::cout << DM.w << DM.h;
     std::vector<Entity> entitiees = {Entity(Vector2f(DM.w/2-128, DM.h/2-128), ball, false),
     								Entity(Vector2f(50, DM.h/2-128), balken, true),
-    								Entity(Vector2f(DM.w-82, DM.h/2-128), balken, true)};
+    								Entity(Vector2f(DM.w-146, DM.h/2-128), balken, true)};
     // {
 	//     Entity wilson(Vector2f(100, 50), grassTexture);
 

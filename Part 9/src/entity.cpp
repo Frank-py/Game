@@ -3,6 +3,7 @@
 #include <SDL2/SDL_image.h>
 #include <cstdlib>
 #include <iostream>
+#include <ctime>
 
 Entity::Entity(Vector2f p_pos, SDL_Texture* p_tex, bool form)
 :pos(p_pos), tex(p_tex)
@@ -53,7 +54,7 @@ int Entity::moveBall(SDL_DisplayMode DM, Entity balken1, Entity balken2){
 	if (pos.x <= 0 || pos.x >= DM.w-32){
 		return 1;
 	}
-	if ((abs(balken1.getPos().x-pos.x)<64 && abs(balken1.getPos().y-pos.y)<160)||(abs(balken2.getPos().x-pos.x)<64 && abs(balken2.getPos().y-pos.y)<160)){
+	if ((pos.x-balken1.getPos().x<=32 && pos.x-balken1.getPos().x>=0 && pos.y-balken1.getPos().y<=160 &&  pos.y-balken1.getPos().y>=0) ||(balken2.getPos().x-pos.x<=32 && balken2.getPos().x-pos.x>=0 && pos.y-balken2.getPos().y<=160 &&  pos.y-balken2.getPos().y>=0)){
 		pos.y += randomy;
 		randomx = randomx*-1;
 		pos.x += randomx;
